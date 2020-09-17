@@ -76,7 +76,7 @@ class AgamaController extends Controller
      * @param  \App\AgamaModel  $agamaModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AgamaModel $agamaModel)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'agama' => 'required|min:3'
@@ -97,7 +97,7 @@ class AgamaController extends Controller
      * @param  \App\AgamaModel  $agamaModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AgamaModel $agamaModel)
+    public function destroy($id)
     {
         $agama = AgamaModel::findorfail($id);
         $agama->delete();
