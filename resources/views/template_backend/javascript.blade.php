@@ -36,5 +36,22 @@
 <script src="{{ asset('asset/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('asset/dist/js/pages/dashboard.js')}}"></script>
+<script>
+	$(function () {
+		/** add active class and stay opened when selected */
+		var url = window.location;
+
+		// for sidebar menu entirely but not cover treeview
+		$('ul.nav-sidebar a').filter(function () {
+			return this.href == url;
+		}).addClass('active');
+
+		// for treeview
+		$('ul.nav-treeview a').filter(function () {
+			return this.href == url;
+		}).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+	});
+</script>
+
 </body>
 </html>
