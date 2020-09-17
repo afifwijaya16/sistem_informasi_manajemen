@@ -10,6 +10,12 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<!-- DataTables -->
+<script src="{{ asset('asset/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('asset/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('asset/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{ asset('asset/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('asset/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
@@ -52,6 +58,18 @@
 		}).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
 	});
 </script>
-
+<script>
+  $(function () {
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>
