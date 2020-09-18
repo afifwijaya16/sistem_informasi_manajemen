@@ -41,9 +41,11 @@ class AgamaController extends Controller
         $this->validate($request, [
             'agama' => 'required|min:1'
         ]);
+
         $agama = AgamaModel::create([
             'agama' => $request->agama,
         ]);
+        // return redirect()->route('agama.index')->with('status', 'Add Data agama Success');
         return redirect()->route('agama.index')->with('status', 'Add Data agama Success');
     }
 

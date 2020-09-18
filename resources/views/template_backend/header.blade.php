@@ -22,5 +22,5 @@
   
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
-<body class="sidebar-mini layout-fixed text-sm sidebar-open">
+<body class="sidebar-mini layout-fixed text-sm">
 <div class="wrapper">
