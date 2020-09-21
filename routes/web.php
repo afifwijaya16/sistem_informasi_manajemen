@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'Admin\HomeController@index')->name('home');
 Route::resource('/agama','Admin\AgamaController');
+Route::put('/agama','Admin\AgamaController@perbarui')->name('agama.perbarui');

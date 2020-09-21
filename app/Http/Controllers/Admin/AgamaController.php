@@ -15,8 +15,8 @@ class AgamaController extends Controller
      */
     public function index()
     {
-        // $agama = AgamaModel::paginate(10);
-        $agama = AgamaModel::all();
+        // $agama = AgamaModel::all();
+        $agama = AgamaModel::paginate(10);
         return view('admin/agama/index', compact('agama'));
     }
 
@@ -80,10 +80,15 @@ class AgamaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'agama' => 'required|min:3'
-        ]);
 
+    }
+
+    public function perbarui(Request $request)
+    {
+        // $this->validate($request, [
+        //     'agama' => 'required|min:3'
+        // ]);
+        $id = $request->id;
         $agama_data = [
             'agama' => $request->agama,
         ];
