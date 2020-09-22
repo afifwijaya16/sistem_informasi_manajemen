@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'Admin\HomeController@index')->name('home');
 Route::resource('/agama','Admin\AgamaController');
 Route::put('/agama','Admin\AgamaController@perbarui')->name('agama.perbarui');
+Route::resource('/pekerjaan','Admin\PekerjaanController');
+Route::put('/pekerjaan','Admin\PekerjaanController@perbarui')->name('pekerjaan.perbarui');
