@@ -16,7 +16,7 @@ class AgamaController extends Controller
     public function index()
     {
         // $agama = AgamaModel::all();
-        $agama = AgamaModel::paginate(10);
+        $agama = AgamaModel::paginate(5);
         return view('admin/agama/index', compact('agama'));
     }
 
