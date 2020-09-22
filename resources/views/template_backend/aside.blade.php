@@ -34,8 +34,8 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item @if(!empty($dataMaster)) menu-open @endif">
+            <a href="#" class="nav-link @if(!empty($dataMaster)) active @endif">
               <i class="nav-icon fa fa-suitcase"></i>
               <p>
                 Data Master
@@ -44,9 +44,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('agama.index') }}" class="nav-link">
+                <a href="{{ route('agama.index') }}" class="nav-link {{ request()->is('agama*') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Agama</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('pekerjaan.index') }}" class="nav-link {{ request()->is('pekerjaan*') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pekerjaan</p>
                 </a>
               </li>
             </ul>
