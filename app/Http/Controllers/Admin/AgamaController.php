@@ -17,7 +17,8 @@ class AgamaController extends Controller
     {
         // $agama = AgamaModel::all();
         $agama = AgamaModel::paginate(5);
-        return view('admin/agama/index', compact('agama'));
+        $dataMaster = 'active';
+        return view('admin/agama/index', compact('agama', 'dataMaster'));
     }
 
     /**
@@ -38,14 +39,14 @@ class AgamaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'agama' => 'required|min:1'
-        ]);
+        // $this->validate($request, [
+        //     'agama' => 'required|min:1'
+        // ]);
 
         $agama = AgamaModel::create([
             'agama' => $request->agama,
         ]);
-        // return redirect()->route('agama.index')->with('status', 'Add Data agama Success');
+        
         return redirect()->route('agama.index')->with('status', 'Add Data agama Success');
     }
 

@@ -1,0 +1,14 @@
+php artisan make:controller --resource Admin/PekerjaanController --model=PekerjaanModel
+php artisan make:seed PekerjaanSeed
+
+create table 
+php artisan make:migration create_pekerjaan_table
+
+make migrate
+php artisan migrate
+
+make rollback migrate
+php artisan migrate:rollback
+
+
+
