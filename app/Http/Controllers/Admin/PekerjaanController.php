@@ -111,4 +111,10 @@ class PekerjaanController extends Controller
         $pekerjaan->delete();
         return redirect()->route('pekerjaan.index')->with('status', 'Delete Data pekerjaan Success');
     }
+
+    public function search(request $request) {
+        $pekerjaan = PekerjaanModel::where('pekerjaan', $request->search)->orWhere('pekerjaan', 'like', '%'.$request->search.'%')->paginate(5);
+        $dataMaster = 'active';
+        return view('admin/pekerjaan/index', compact('pekerjaan', 'dataMaster'));
+    }
 }
