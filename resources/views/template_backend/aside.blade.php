@@ -98,6 +98,15 @@
                              </a>
                          </li>
                      </ul>
+                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                             <a href="{{ route('kelurahan.index') }}"
+                                 class="nav-link {{ request()->is('kelurahan*') ? 'active' : '' }}">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Kelurahan</p>
+                             </a>
+                         </li>
+                     </ul>
                  </li>
              </ul>
          </nav>

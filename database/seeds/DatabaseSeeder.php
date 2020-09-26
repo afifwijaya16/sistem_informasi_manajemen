@@ -14,11 +14,12 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call([
             // UsersTableSeeder::class,
-            // AgamaSeed::class,
-            // PekerjaanSeed::class,
-            // ProvinsiSeed::class,
-            // KabupatenSeed::class,
+            AgamaSeed::class,
+            PekerjaanSeed::class,
+            ProvinsiSeed::class,
+            KabupatenSeed::class,
             KecamatanSeed::class,
+            KelurahanSeed::class,
         ]);
     }
 }

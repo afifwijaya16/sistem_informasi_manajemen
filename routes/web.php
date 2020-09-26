@@ -26,3 +26,4 @@ Route::put('/pekerjaan','Admin\PekerjaanController@perbarui')->name('pekerjaan.p
 Route::resource('/provinsi','Admin\ProvinsiController');
 Route::resource('/kabupaten','Admin\KabupatenController');
 Route::resource('/kecamatan','Admin\KecamatanController');
+Route::resource('/kelurahan','Admin\KelurahanController');

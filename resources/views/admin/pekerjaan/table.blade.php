@@ -1,8 +1,8 @@
 <form action="{{ route('pekerjaan.search') }}" class="form-horizontal my-2" method="get">
     <div class="form-group row">
-        <label class="col-md-1 col-form-label">Search</label>
+        <label class="col-md-1 col-form-label">Pencarian</label>
         <div class="col-md-5">
-            <input class="form-control form-control-sm" name="search" placeholder="Enter your search..."  value="{{ old('search') }}">
+            <input class="form-control form-control-sm" name="search" placeholder="Pencarian ..."  value="{{ old('search') }}">
         </div>
     </div>
 </form>
