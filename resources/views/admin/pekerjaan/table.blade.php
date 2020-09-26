@@ -2,7 +2,7 @@
     <div class="form-group row">
         <label class="col-md-1 col-form-label">Pencarian</label>
         <div class="col-md-5">
-            <input class="form-control form-control-sm" name="search" placeholder="Pencarian ..."  value="{{ old('search') }}">
+            <input class="form-control form-control-sm" name="search" placeholder="Pencarian ..."  value="{{ request('search') }}">
         </div>
     </div>
 </form>
@@ -40,6 +40,11 @@
                 </td>
             </tr>
             @endforeach
+            @if ($pekerjaan->count() == 0)
+            <tr>
+                <td class="text-center" colspan="3">Pencarian Tidak Ditemukan</td>
+            </tr>
+            @endif
     </table>
     <div class="float-right">
         {{ $pekerjaan->links() }}

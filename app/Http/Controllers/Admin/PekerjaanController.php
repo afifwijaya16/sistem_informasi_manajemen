@@ -113,7 +113,8 @@ class PekerjaanController extends Controller
     }
 
     public function search(request $request) {
-        $pekerjaan = PekerjaanModel::where('pekerjaan', $request->search)->orWhere('pekerjaan', 'like', '%'.$request->search.'%')->paginate(5);
+        $pekerjaan = PekerjaanModel::Where('pekerjaan', 'like', '%'.$request->search.'%')->paginate(5);
+        $pekerjaan->appends(['search' => $request->search]);
         $dataMaster = 'active';
         return view('admin/pekerjaan/index', compact('pekerjaan', 'dataMaster'));
     }
