@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\KelurahanModel;
+use App\ProvinsiModel;
+use App\KabupatenModel;
+use App\KecamatanModel;
 use Illuminate\Http\Request;
 
 class KelurahanController extends Controller
@@ -20,12 +23,16 @@ class KelurahanController extends Controller
     
     public function index()
     {
-        $kelurahan = KelurahanModel::
-        join('wil_kecamatan', 'wil_kelurahan.kecamatan_id', '=', 'wil_kecamatan.kode_kec')
-        ->select('wil_kelurahan.*', 'wil_kecamatan.nama_kecamatan')
-        ->paginate(10);
+        // $kelurahan = KelurahanModel::
+        // join('wil_kecamatan', 'wil_kelurahan.kecamatan_id', '=', 'wil_kecamatan.kode_kec')
+        // ->select('wil_kelurahan.*', 'wil_kecamatan.nama_kecamatan')
+        // ->paginate(10);
+        $kelurahan = 0;
+        $provinsi = ProvinsiModel::all();
+        $kabupaten = KabupatenModel::all();
+        $kecamatan = KecamatanModel::all();
         $dataMasterWilayah = 'active';
-        return view('admin/kelurahan/index', compact('kelurahan', 'dataMasterWilayah'));
+        return view('admin/kelurahan/index', compact('provinsi', 'kabupaten','kecamatan', 'dataMasterWilayah'));
     }
 
     /**
