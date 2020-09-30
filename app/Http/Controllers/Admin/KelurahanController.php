@@ -35,6 +35,9 @@ class KelurahanController extends Controller
         return view('admin/kelurahan/index', compact('provinsi', 'kabupaten','kecamatan', 'dataMasterWilayah'));
     }
 
+    public function filter(Request $request){
+        
+    }
     /**
      * Show the form for creating a new resource.
      *
